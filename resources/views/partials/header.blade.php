@@ -1,26 +1,24 @@
 <header>
   <div class="logo-holder">
-    <img src="{{ asset('images/dc-logo.png') }}" alt="Logo">
+    <img class="logo" src="{{ asset('images/dc-logo.png') }}" alt="Logo">
   </div>
-  <nav>
-    <ul>
-      @php
-        $arrMenu = config('menu');
-      @endphp
+  <ul>
+    @php
+      $arrMenu = config('menu');
+    @endphp
 
-      @foreach ($arrMenu as $menuItem)
-        <li class="{{ in_array(Route::currentRouteName(), $menuItem['route']) ? 'active' : '' }}">
-          <a href="{{ route($menuItem['route'][0]) }}">{{ $menuItem['name'] }}</a>
-        </li>
-      @endforeach
-
-      <li>
-        <a href="">characters</a>
+    @foreach ($arrMenu as $menuItem)
+      <li class="{{ in_array(Route::currentRouteName(), $menuItem['route']) ? 'active' : '' }}">
+        <a href="{{ route($menuItem['route'][0]) }}">{{ $menuItem['name'] }}</a>
       </li>
-    </ul>
-  </nav>
+    @endforeach
+  </ul>
+
 
   <div class="search-bar">
-    search
+    <form action="post">
+      <input type="text" placeholder="Search" id="search">
+      <button><img class="search-icon" src="{{ asset('images/magnifying-glass-solid.svg') }}" alt=""></button>
+    </form>
   </div>
 </header>

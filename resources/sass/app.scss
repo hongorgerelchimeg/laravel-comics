@@ -1,1 +1,66 @@
 //
+@import 'partials/reset';
+@import 'partials/variable_colors';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--body-background);
+  font-size: 13px;
+
+}
+
+header {
+  padding: 1rem 0;
+  text-transform: uppercase;
+  color: var(--header-text-color);
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  ul {
+    max-width: 900px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    li {
+      margin-right: 2rem;
+      a {
+        color: var(--header-text-color);
+        text-decoration: none;
+        &:hover {
+          color: var(--dc-blue);
+        }
+      }
+    }
+    .active a{
+      color: var(--hover-text-color);
+    }
+
+  }
+
+  .logo-holder{
+    max-width: 100%;
+    .logo {
+      width: 4rem;
+    }
+  }
+}
+.search-bar {
+  border-bottom: var(--dc-blue) solid 1px;
+  #search {
+    border: none;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+  }
+  .search-icon {
+    width: auto;
+    height: .8rem;
+    color: var(--header-text-color);
+  }
+}
+
