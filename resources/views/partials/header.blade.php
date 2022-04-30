@@ -1,39 +1,25 @@
 <header>
   <div class="logo-holder">
-    <img src="" alt="">
+    <img src="{{ asset('images/dc-logo.png') }}" alt="Logo">
   </div>
-  <ul>
-    <li>
-      <a href="">characters</a>
-    </li>
-    <li>
-      <a href="">comics</a>
-    </li>
-    <li>
-      <a href="">movies</a>
-    </li>
-    <li>
-      <a href="">tv</a>
-    </li>
-    <li>
-      <a href="">games</a>
-    </li>
-    <li>
-      <a href="">collectibles</a>
-    </li>
-    <li>
-      <a href="">videos</a>
-    </li>
-    <li>
-      <a href="">fans</a>
-    </li>
-    <li>
-      <a href="">news</a>
-    </li>
-    <li>
-      <a href="">shop</a>
-    </li>
-  </ul>
+  <nav>
+    <ul>
+      @php
+        $arrMenu = config('menu');
+      @endphp
+
+      @foreach ($arrMenu as $menuItem)
+        <li class="{{ in_array(Route::currentRouteName(), $menuItem['route']) ? 'active' : '' }}">
+          <a href="{{ route($menuItem['route'][0]) }}">{{ $menuItem['name'] }}</a>
+        </li>
+      @endforeach
+
+      <li>
+        <a href="">characters</a>
+      </li>
+    </ul>
+  </nav>
+
   <div class="search-bar">
     search
   </div>
