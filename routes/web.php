@@ -25,10 +25,11 @@ Route::get('/Comics/{id}', function ($id) {
   $comics = collect(config('comics'));
   $selectedComic = $comics->firstWhere('id', $id);
   if ($selectedComic === null ) abort(404);
+
   return view('template/comic_page', [
     'comic' => $selectedComic
   ]);
-})->name('Comic');
+})->name('comic');
 
 Route::get('/Movies', function () {
   return view('Movies');

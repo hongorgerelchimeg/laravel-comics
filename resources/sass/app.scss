@@ -6,7 +6,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--body-background);
-  font-size: 13px;
+  font-size: 12px;
 
 }
 
@@ -14,53 +14,102 @@ header {
   padding: 1rem 0;
   text-transform: uppercase;
   color: var(--header-text-color);
+  font-weight: 500;
   background-color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100vw;
-  ul {
-    max-width: 900px;
-    list-style: none;
+  width: 100%;
+  .wrapper {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-evenly;
-    li {
-      margin-right: 2rem;
-      a {
-        color: var(--header-text-color);
-        text-decoration: none;
-        &:hover {
-          color: var(--dc-blue);
+    max-width: 1000px;
+    margin: 0 auto;
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      li {
+        margin-right: 1.5rem;
+        a {
+          color: var(--header-text-color);
+          text-decoration: none;
+          &:hover {
+            color: var(--dc-blue);
+          }
         }
       }
-    }
-    .active a{
-      color: var(--hover-text-color);
+      .active a{
+        color: var(--hover-text-color);
+      }
+
     }
 
-  }
+    .logo-holder{
+      max-width: 100%;
+      .logo {
+        width: 4rem;
+      }
+    }
 
-  .logo-holder{
-    max-width: 100%;
-    .logo {
-      width: 4rem;
+    .search-bar {
+      border-bottom: var(--dc-blue) solid 1px;
+      #search {
+        border: none;
+      }
+      button {
+        border: none;
+        background-color: transparent;
+      }
+      .search-icon {
+        width: auto;
+        height: .8rem;
+        color: var(--header-text-color);
+      }
     }
   }
 }
-.search-bar {
-  border-bottom: var(--dc-blue) solid 1px;
-  #search {
-    border: none;
-  }
-  button {
-    border: none;
-    background-color: transparent;
-  }
-  .search-icon {
-    width: auto;
-    height: .8rem;
-    color: var(--header-text-color);
+
+.jumbotron {
+  height: 40vh;
+  width: 100%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    object-fit: cover;
   }
 }
+
+.current-series {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  .card {
+    flex-basis: calc((100% / 6) - (5rem / 6));
+    max-width: calc((100% / 6) - (5rem / 6));
+    margin-right: 1rem;
+    .img-holder {
+      height: 10rem;
+      overflow: hidden;
+      margin-bottom: .8rem;
+      img {
+        object-fit: cover;
+        max-width: 100%;
+      }
+    }
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+  }
+  & > :nth-child(6n + 6) {
+    margin-right: 0;
+  }
+
+}
+
+
 
