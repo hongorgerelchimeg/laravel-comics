@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/Characters', function () {
+Route::get('/characters', function () {
   return view('Characters');
-})->name('Characters');
+})->name('characters');
 
-Route::get('/', function () {
+Route::get('/comics', function () {
     $comics = config('comics');
     return view('home');
-})->name('Comics');
+})->name('comics');
 
-Route::get('/Comics/{id}', function ($id) {
+Route::get('/comics/{id}', function ($id) {
   $comics = collect(config('comics'));
   $selectedComic = $comics->firstWhere('id', $id);
   if ($selectedComic === null ) abort(404);
@@ -31,35 +31,35 @@ Route::get('/Comics/{id}', function ($id) {
   ]);
 })->name('comic');
 
-Route::get('/Movies', function () {
+Route::get('/movies', function () {
   return view('Movies');
-})->name('Movies');
+})->name('movies');
 
-Route::get('/TV', function () {
+Route::get('/tv', function () {
   return view('TV');
-})->name('TV');
+})->name('tv');
 
-Route::get('/Games', function () {
+Route::get('/games', function () {
   return view('Games');
-})->name('Games');
+})->name('games');
 
-Route::get('/Collectibles', function () {
+Route::get('/collectibles', function () {
   return view('Collectibles');
-})->name('Collectibles');
+})->name('collectibles');
 
-Route::get('/Videos', function () {
+Route::get('/videos', function () {
   return view('Videos');
-})->name('Videos');
+})->name('videos');
 
-Route::get('/Fans', function () {
+Route::get('/fans', function () {
   return view('Fans');
-})->name('Fans');
+})->name('fans');
 
-Route::get('/News', function () {
+Route::get('/news', function () {
   return view('News');
-})->name('News');
+})->name('news');
 
 
-Route::get('/Shop', function () {
+Route::get('/shop', function () {
   return view('Shop');
-})->name('Shop');
+})->name('shop');
